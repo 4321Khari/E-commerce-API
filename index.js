@@ -19,6 +19,11 @@ server.use(bodyParser.json());
 // USING PRODUCT ROUTER FOR ROUTING 
 server.use("/products", productRouter);
 
+// HOMEPAGE RESPONSE
+server.get("/",(req,res)=>{
+    res.send("This is the e-commerce APIs")
+})
+
 // HANDLE 404 - API NOT FOUND
 server.use((req, res) => {
     res.status(404).send({ data: { message: "API Not Found" } });
